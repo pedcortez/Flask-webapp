@@ -3,6 +3,10 @@ from flask import Flask, request, render_template, redirect, url_for, session, l
 
 app = Flask(__name__)
 
+@app.route('/health')
+def health():
+    return jsonify(status='UP')
+
 @app.route('/')
 @app.route('/home')
 def home():
